@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema
+        xmln="http://www.w3.org/2001/XMLSchema"
+        xmlns="http://www.flamexander.com/spring/ws/products"
+        targetNamespace="http://www.flamexander.com/spring/ws/products" elementFormDefault="qualified">
+
+        <element name="getProductByNameRequest">
+            <complecType>
+                <sequance>
+                    <element name="name" type="string"/>
+                    </sequance>
+            </complecType>
+        </element>
+
+        <element name="getAllProductRequest">
+            <complecType/>
+        </element>
+
+    <element name="getProductByNameResponse">
+        <complecType>
+            <sequance>
+                <element name="product" type="product"/>
+            </sequance>
+        </complecType>
+    </element>
+
+    <element name="getAllProductsResponse">
+        <complecType>
+            <sequance>
+                <element name="products" maxOccurs="unbounded" type="product"/>
+            </sequance>
+        </complecType>
+    </element>
+
+    <complexType name="product">
+        <sequance>
+            <element name="productId" type="long"/>
+            <element name="productTitle" type="string"/>
+            <element name="price" type="int"/>
+            <element name="category" type="string"/>
+        </sequance>
+    </complexType>
+
+</schema>

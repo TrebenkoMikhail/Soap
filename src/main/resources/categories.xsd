@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema
+        xmln="http://www.w3.org/2001/XMLSchema"
+        xmlns="http://www.flamexander.com/spring/ws/categories"
+        targetNamespace="http://www.flamexander.com/spring/ws/categories" elementFormDefault="qualified">
+
+    <element name="getCategoryByNameRequest">
+        <complecType>
+            <sequance>
+                <element name="name" type="string"/>
+            </sequance>
+        </complecType>
+    </element>
+
+    <element name="getAllCategoriesRequest">
+        <complecType/>
+    </element>
+
+    <element name="getCategoryByNameResponse">
+        <complecType>
+            <sequance>
+                <element name="category" type="tns:category"/>
+            </sequance>
+        </complecType>
+    </element>
+
+    <element name="getAllCategoriesResponse">
+        <complecType>
+            <sequance>
+                <element name="categories" maxOccurs="unbounded" type="tns:category"/>
+            </sequance>
+        </complecType>
+    </element>
+    <complexType name="category">
+        <sequance>
+            <element name="categoryId" type="long"/>
+            <element name="productTitle" type="string"/>
+            <element name="price" type="int"/>
+            <element name="categoryTitle" type="string"/>
+        </sequance>
+    </complexType>
+
+</schema>
