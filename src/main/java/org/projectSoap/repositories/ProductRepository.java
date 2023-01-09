@@ -1,9 +1,9 @@
 package org.projectSoap.repositories;
 
+import org.projectSoap.entities.ProductEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import soap.les4.entities.ProductEntity;
 
 import java.util.Optional;
 
