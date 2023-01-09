@@ -1,0 +1,9 @@
+POST http://localhost:8080/ws
+Header -> Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schema.xmlsoap.org/soap/envelope/" xmlns:f="http://www.flamexander.com/spring/ws/products">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <f:getAllStudentsRequest/>
+    </soapenv:Body>
+</soapenv:Envelope>

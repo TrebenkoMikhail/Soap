@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<schema
-        xmln="http://www.w3.org/2001/XMLSchema"
-        xmlns="http://www.flamexander.com/spring/ws/products"
+<xs:schema
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="http://www.flamexander.com/spring/ws/products"
         targetNamespace="http://www.flamexander.com/spring/ws/products" elementFormDefault="qualified">
 
-        <element name="getProductByNameRequest">
-            <complecType>
-                <sequance>
-                    <element name="name" type="string"/>
-                    </sequance>
-            </complecType>
-        </element>
+        <xs:element name="getProductByTitleRequest">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="name" type="xs:string"/>
+                    </xs:sequence>
+            </xs:complexType>
+        </xs:element>
 
-        <element name="getAllProductRequest">
-            <complecType/>
-        </element>
+        <xs:element name="getAllProductRequest">
+            <xs:complexType/>
+        </xs:element>
 
-    <element name="getProductByNameResponse">
-        <complecType>
-            <sequance>
-                <element name="product" type="product"/>
-            </sequance>
-        </complecType>
-    </element>
+    <xs:element name="getProductByTitleResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="product" type="tns:product"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
-    <element name="getAllProductsResponse">
-        <complecType>
-            <sequance>
-                <element name="products" maxOccurs="unbounded" type="product"/>
-            </sequance>
-        </complecType>
-    </element>
+    <xs:element name="getAllProductsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="products" maxOccurs="unbounded" type="tns:product"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
-    <complexType name="product">
-        <sequance>
-            <element name="productId" type="long"/>
-            <element name="productTitle" type="string"/>
-            <element name="price" type="int"/>
-            <element name="category" type="string"/>
-        </sequance>
-    </complexType>
+    <xs:complexType name="product">
+        <xs:sequence>
+            <xs:element name="productId" type="xs:long"/>
+            <xs:element name="productTitle" type="xs:string"/>
+            <xs:element name="price" type="xs:int"/>
+            <xs:element name="categoryTitle" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
 
-</schema>
+</xs:schema>
