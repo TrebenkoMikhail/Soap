@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<schema
-        xmln="http://www.w3.org/2001/XMLSchema"
-        xmlns="http://www.flamexander.com/spring/ws/categories"
+<xs:schema
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="http://www.flamexander.com/spring/ws/categories"
         targetNamespace="http://www.flamexander.com/spring/ws/categories" elementFormDefault="qualified">
 
-    <element name="getCategoryByNameRequest">
-        <complecType>
-            <sequance>
-                <element name="name" type="string"/>
-            </sequance>
-        </complecType>
-    </element>
+    <xs:element name="getCategoryByNameRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
-    <element name="getAllCategoriesRequest">
-        <complecType/>
-    </element>
+    <xs:element name="getAllCategoriesRequest">
+        <xs:complexType/>
+    </xs:element>
 
-    <element name="getCategoryByNameResponse">
-        <complecType>
-            <sequance>
-                <element name="category" type="tns:category"/>
-            </sequance>
-        </complecType>
-    </element>
+    <xs:element name="getCategoryByNameResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="category" type="tns:category"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
-    <element name="getAllCategoriesResponse">
-        <complecType>
-            <sequance>
-                <element name="categories" maxOccurs="unbounded" type="tns:category"/>
-            </sequance>
-        </complecType>
-    </element>
-    <complexType name="category">
-        <sequance>
-            <element name="categoryId" type="long"/>
-            <element name="productTitle" type="string"/>
-            <element name="price" type="int"/>
-            <element name="categoryTitle" type="string"/>
-        </sequance>
-    </complexType>
+    <xs:element name="getAllCategoriesResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="categories" maxOccurs="unbounded" type="tns:category"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="category">
+        <xs:sequence>
+            <xs:element name="categoryId" type="xs:long"/>
+            <xs:element name="productTitle" type="xs:string"/>
+            <xs:element name="price" type="xs:int"/>
+            <xs:element name="categoryTitle" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
 
-</schema>
+</xs:schema>
